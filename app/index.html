@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+            <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+            <title>
+                Geospatial React!
+            </title>
+
+            <link rel="stylesheet" href="css/reveal.css">
+            <link rel="stylesheet" href="css/theme/black.css">
+            <link rel="stylesheet" href="lib/css/zenburn.css">
+
+            <script>
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            </script>
+        </head>
+        <body>
+            <div class="reveal">
+                <div class="slides">
+                    <section>
+                        <h1>
+                            Geospatial React!
+                        </h1>
+                        <div>
+                            <div>
+                                Kelly Innes / Azavea
+                            </div>
+                            <div>
+                                Twitter / <a href="https://twitter.com/k_llyi" target="_blank" rel="noopener noreferrer">
+                                    @k_llyi
+                                </a>
+                            </div>
+                            <div>
+                                GitHub / <a href="https://github.com/kellyi" target="_blank" rel="noopener noreferrer">
+                                    @kellyi
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <p>
+                            Sandbox app to try out using React + Leaflet
+                        </p>
+                        <small>
+                            <a
+                                href="https://github.com/kellyi/react-leaflet-sandbox"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://github.com/kellyi/react-leaflet-sandbox
+                            </a>
+                        </small>
+                        <img
+                            src="images/react-leaflet-sandbox.png"
+                            alt="React + Leaflet sandbox"
+                            style="background:none;border:none;box-shadow:none"
+                        />
+                    </section>
+                    <section>
+                        <section>
+                            <img
+                                src="images/azavea-logo.png"
+                                alt="Azavea"
+                                style="background:none;border:none;box-shadow:none"
+                            />
+                            <p>
+                                <a href="https://azavea.com" target="_blank"  rel="noopener noreferrer">
+                                    azavea.com
+                                </a>
+                            </p>
+                            <p>
+                                <em>
+                                    Advanced geospatial technology and research for civic and social impact
+                                </em>
+                            </p>
+                        </section>
+                        <section>
+                            <img
+                                src="images/civicapps.png"
+                                alt="Civic Apps"
+                                style="background:none;border:none;box-shadow:none;height:350px"
+                            />
+                            <p>
+                                Civic Applications team
+                            </p>
+                        </section>
+                    </section>
+                    <section>
+                        <section>
+                            <h2>
+                                Some Azavea / Civic Apps projects
+                            </h2>
+                        </section>
+                        <section>
+                            <div>
+                                Model My Watershed
+                            </div>
+                            <small>
+                                <a target="_blank" rel="noopener noreferrer" href="https://app.wikiwatershed.org">
+                                    https://app.wikiwatershed.org
+                                </a>
+                            </small>
+                            <img
+                                src="images/modelmywatershed.png"
+                                alt="Model My Watershed"
+                                style="background:none;border:none;box-shadow:none"
+                            />
+                        </section>
+                        <section>
+                            <div>
+                                The Nature Conservancy / Geosite Framework
+                            </div>
+                            <small>
+                                <a target="_blank" rel="noopener noreferrer" href="http://maps.coastalresilience.org">
+                                    http://maps.coastalresilience.org
+                                </a>
+                            </small>
+                            <img
+                                src="images/tnc.png"
+                                alt="Geosite Framework"
+                                style="background:none;border:none;box-shadow:none"
+                            />
+                        </section>
+                        <section>
+                            <div>
+                                Philadelphia Water Department / Parcel Viewer
+                            </div>
+                            <img
+                                src="images/parcelviewer.png"
+                                alt="Parcel Viewer"
+                                style="background:none;border:none;box-shadow:none;height:600px"
+                            />
+                        </section>
+                        <section>
+                            <div>
+                                Still unnamed / PWD Greened Acre Retrofit Program
+                            </div>
+                            <img
+                                src="images/garp.png"
+                                alt="GARP"
+                                style="background:none;border:none;box-shadow:none"
+                            />
+                        </section>
+                    </section>
+                    <section>
+                        <section>
+                            <h2>
+                                Basic GIS terminology
+                            </h2>
+                        </section>
+                        <section>
+                            <h2>
+                                Rasters
+                            </h2>
+                            <p>
+                                +
+                            </p>
+                            <h2>
+                                Vectors
+                            </h2>
+                        </section>
+                        <section>
+                            <h2>
+                                Rasters / Tiles
+                            </h2>
+                            <p>
+                                <em>
+                                    basemaps and overlays
+                                </em>
+                            </p>
+                            <div>
+                            <img
+                                src="images/imagery.jpg"
+                                alt="Imagery tile"
+                                style="background:none;border:none;box-shadow:none"
+                            />
+                            <img
+                                src="images/basemap.png"
+                                alt="Basemap tile"
+                                style="background:none;border:none;box-shadow:none"
+                            />
+                            <img
+                                src="images/overlay.png"
+                                alt="Raster overlay"
+                                style="background:none;border:none;box-shadow:none"
+                            />
+                            </div>
+                        </section>
+                        <section>
+                            <h2>
+                                Vectors / Shapes
+                            </h2>
+                            <p>
+                                <em>
+                                    markers, lines, polygons
+                                </em>
+                            </p>
+                            <div>
+                                <img
+                                    src="images/marker.png"
+                                    alt="marker"
+                                    style="background:none;border:none;box-shadow:none;height:200px"
+                                />
+                                <img
+                                    src="images/polyline.png"
+                                    alt="polyline"
+                                    style="background:none;border:none;box-shadow:none;height:200px"
+                                />
+                                <img
+                                    src="images/polygon.png"
+                                    alt="polygon"
+                                    style="background:none;border:none;box-shadow:none;height:200px"
+                                />
+                            </div>
+                        </section>
+                        <section>
+                            <p>
+                                Mapping libraries combine rasters + vectors into maps
+                            </p>
+                            <div>
+                                <img
+                                    src="images/raster.png"
+                                    alt="raster basemap"
+                                    style="background:none;border:none;box-shadow:none"
+                                />
+                                <img
+                                    src="images/vector.png"
+                                    alt="vector layer"
+                                    style="background:none;border:none;box-shadow:none"
+                                />
+                                <img
+                                    src="images/vectoronraster.png"
+                                    alt="vector on raster"
+                                    style="background:none;border:none;box-shadow:none"
+                                />
+                            </div>
+                        </section>
+                    </section>
+                    <section>
+                        <section>
+                            <h2>
+                                JavaScript mapping libraries
+                            </h2>
+                        </section>
+                        <section>
+                            <h2>
+                                TLDR
+                            </h2>
+                            <p>
+                                start with Leaflet
+                            </p>
+                            <a
+                                href="https://leafletjs.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://leafletjs.com
+                            </a>
+                        </section>
+                        <section>
+                            <p>
+                                Other JavaScript mapping libraries
+                            </p>
+                            <ul>
+                                <li>
+                                    Google Maps
+                                </li>
+                                <li>
+                                    MapBoxGL
+                                </li>
+                                <li>
+                                    Esri ArcGIS JavaScript API
+                                </li>
+                                <li>
+                                    OpenLayers
+                                </li>
+                            </ul>
+                        </section>
+                        <section>
+                            <p>
+                                Leaflet has...
+                            </p>
+                            <ul>
+                                <li>
+                                    an ergonomic, pleasant to use API
+                                </li>
+                                <li>
+                                    great documentation
+                                </li>
+                                <li>
+                                    lots of free-to-use basemaps
+                                </li>
+                                <li>
+                                    a rich ecosystem of third-party libraries, including
+                                    things like draw and measurement tools, minimaps & lots
+                                    more (see <a
+                                         href="https://leafletjs.com/plugins.html"
+                                         target="_blank"
+                                         rel="noopener noreferrer"
+                                     >
+                                        https://leafletjs.com/plugins.html
+                                    </a>)
+                                </li>
+                            </ul>
+                        </section>
+                    </section>
+                    <section>
+                        <section>
+                            <p>
+                                Leaflet also has its own distinct way of managing state
+                            </p>
+                        </section>
+                        <section>
+                            <p>
+                                React state overview
+                            </p>
+                        </section>
+                        <section>
+                            <img
+                                src="images/reactstate.png"
+                                alt="React state diagram"
+                            />
+                        </section>
+                        <section>
+                            <p>
+                                State updates have to happen through circumscribed channels
+                                so that React will know when and how to rerender the DOM
+                            </p>
+                        </section>
+                        <section data-markdown>
+                            <textarea data-template>
+                                Leaflet state overview
+
+                                ```js
+                                    this.leafletMap = L.map('leaflet-map-div-id', {
+                                        center: initialMapCenter,
+                                        zoom: initialMapZoom,
+                                    });
+                                ```
+                            </textarea>
+                        </section>
+                        <section>
+                            <p>
+                                Leaflet state overview
+                            </p>
+                            <ul>
+                                <li>
+                                    map is an object, created on a div
+                                </li>
+                                <li>
+                                    layers, zoom level, center, controls, etc are properties of the map object
+                                </li>
+                                <li>
+                                    Leaflet manages how the DOM changes when the map's properties change
+                                </li>
+                                <li>
+                                    you call mutating methods to change map properties
+                                </li>
+                            </ul>
+                        </section>
+                        <section>
+                            <img
+                                src="images/phlbasemap.png"
+                                alt="Philly basemap"
+                                style="background:none;border:none;box-shadow:none;height:225px"
+                            />
+                            <img
+                                src="images/setView.png"
+                                alt="Method call"
+                                style="background:none;border:none;box-shadow:none;height:100px"
+                            />
+                            <img
+                                src="images/flyto.png"
+                                alt="Art museum tile"
+                                style="background:none;border:none;box-shadow:none;height:225px"
+                            />
+                        </section>
+                        <section>
+                            <img
+                                src="images/flyto.png"
+                                alt="Art museum tile"
+                                style="background:none;border:none;box-shadow:none;height:225px"
+                            />
+                            <img
+                                src="images/addLayerMethodCall.png"
+                                alt="Add layer method call"
+                                style="background:none;border:none;box-shadow:none;height:100px"
+                            />
+                            <img
+                                src="images/addlayer.png"
+                                alt="Map overlay"
+                                style="background:none;border:none;box-shadow:none;height:225px"
+                            />
+                        </section>
+                        <section>
+                            <p>
+                                Leaflet's programming paradigm is...
+                            </p>
+                            <ul>
+                                <li>
+                                    very object-oriented
+                                </li>
+                                <li>
+                                    not really declarative
+                                </li>
+                                <li>
+                                    not at all functional
+                                </li>
+                                <li>
+                                    very performant
+                                </li>
+                            </ul>
+                        </section>
+                    </section>
+                    <section>
+                        <section>
+                            Use React for <em>most</em> of the UI, but use Leaflet for maps
+                        </section>
+                        <section>
+                            Since React + Leaflet handle application state and DOM updates
+                            differently, there's some work involved in stitching them together
+                        </section>
+                        <section>
+                            This often means using React Component lifecycle methods in
+                            atypical ways
+                        </section>
+                        <section data-markdown>
+                            <textarea data-template>
+                                ```js
+                                                    render() {
+                                                        return null;
+                                                    }
+                                ```
+                            </textarea>
+                        </section>
+                    </section>
+                    <section>
+                        <section>
+                            <p>
+                                react-leaflet
+                            </p>
+                            <a
+                                href="https://react-leaflet.js.org/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://react-leaflet.js.org
+                            </a>
+                            <p>
+                                <em>
+                                    React-Leaflet provides an abstraction of Leaflet as React components
+                                </em>
+                            </p>
+                        </section>
+                        <section>
+                            <p>
+                                <em>
+                                    please do not send pull requests to add features that are not supported by Leaflet
+                                </em>
+                            </p>
+                            <small>
+                                <a
+                                    href="https://github.com/PaulLeCam/react-leaflet/blob/master/CONTRIBUTING.md"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    https://github.com/PaulLeCam/react-leaflet/blob/master/CONTRIBUTING.md
+                                </a>
+                            </small>
+                        </section>
+                        <section>
+                            <img
+                                src="images/react-leaflet-map-code.png"
+                                alt="React-leaflet map code"
+                                style="background:none;border:none;box-shadow:none"
+                            />
+                        </section>
+                        <section data-markdown>
+                            <textarea data-template>
+                                Along with `Map` and `TileLayer` interfaces, React-Leaflet also provides interfaces for
+
+                                - zoom, scale, and layer selector controls
+                                - additional raster layers, like `WMSTileLayer`s and `ImageOverlay`s
+                                - other vectors, like `Marker`s, `Circle`s, `Polygon`s, and `GeoJSON` features
+                                - event handler functions on the `Map`: `onMoveEnd`, `onZoomEnd`
+                            </textarea>
+                        </section>
+                        <section data-markdown>
+                            <textarea data-template>
+                                ```jsx
+                                    return (
+                                        <Map
+                                            center={center}
+                                            zoom={zoom}
+                                            id="react-leaflet-map"
+                                            onMoveEnd={this.handleMoveEnd}
+                                            onZoomEnd={this.handleZoomEnd}
+                                        >
+                                            <TileLayer
+                                                url={basemap}
+                                                attribution={attribution}
+                                            />
+                                        </Map>
+                                    );
+                                ```
+                            </textarea>
+                        </section>
+                        <section>
+                            <p>
+                                React-Leaflet works really well if you're doing things which are
+                                part of Leaflet's API
+                            </p>
+                            <p>
+                                It also makes it possible to drop down to using plain Leaflet methods when necessary
+                            </p>
+                        </section>
+                        <section>
+                            <p>
+                                When would plain Leaflet methods be necessary?
+                            </p>
+                            <ul>
+                                <li>
+                                    adding a geocoder
+                                </li>
+                                <li>
+                                    using an Esri ArcGIS map layer
+                                </li>
+                                <li>
+                                    using a Leaflet plugin for which no React-Leaflet style wrapper exists
+                                </li>
+                                <li>
+                                    getting the map's bounding box
+                                </li>
+                                <li>
+                                    changing the map's bounding box
+                                </li>
+                            </ul>
+                        </section>
+                        <section data-markdown>
+                            <textarea data-template>
+                                You can assign the map to a class variable using a `ref`...
+                                ```jsx
+                                    return (
+                                        <Map
+                                            ref={(m) => { this.leafletMap = m; }}
+                                            center={center}
+                                            zoom={zoom}
+                                            id="react-leaflet-map"
+                                            onMoveEnd={this.handleMoveEnd}
+                                            onZoomEnd={this.handleZoomEnd}
+                                        >
+                                            <TileLayer
+                                                url={basemap}
+                                                attribution={attribution}
+                                            />
+                                        </Map>
+                                    );
+                                ```
+                            </textarea>
+                        </section>
+                        <section data-markdown>
+                            <textarea data-template>
+                                ...then call Leaflet methods in React lifecycle methods...
+                                ```jsx
+                                componentDidMount() {
+                                    const { esriImageryBasemapIsVisible } = this.props;
+
+                                    const { leafletElement } = this.leafletMap;
+
+                                    if (!esriImageryBasemapIsVisible || !leafletElement) {
+                                        return null;
+                                    }
+
+                                    L.esri.basemap('imagery').addTo(leafletElement);
+
+                                    return null;
+                                }
+                                ```
+                            </textarea>
+                        </section>
+                        <section data-markdown>
+                            <textarea data-template>
+                                ...to do things like toggle an ArcGIS layer on and off
+                                ```jsx
+                                componentWillReceiveProps({ esriBasemapVisible }) {
+                                    if (esriBasemapVisible === this.props.esriBasemapVisible) {
+                                        return null;
+                                    }
+
+                                    const { leafletElement } = this.leafletMap;
+
+                                    if (!esriImageryBasemapIsVisible) {
+                                        leafletElement.removeLayer(this.esriImageryBasemap);
+                                        ...
+                                    } else {
+                                        this.esriImageryBasemap.addTo(leafletElement);
+                                        ...
+                                    }
+                                ```
+                            </textarea>
+                        </section>
+                        <section>
+                            <img
+                                src="images/sandbox-layers-on.png"
+                                alt="Sandbox layers on"
+                                style="background:none;border:none;box-shadow:none"
+                            />
+                        </section>
+                    </section>
+                    <section>
+                        <section>
+                            <p>
+                                React-Leaflet source code is interesting to read because it...
+                            </p>
+                            <ul>
+                                <li>
+                                    demonstrates writing React Component interfaces for different Leaflet elements
+                                </li>
+                                <li>
+                                    frequently uses React Component lifecycle methods in weird ways
+                                </li>
+                            </ul>
+                        </section>
+                        <section data-markdown>
+                            <textarea data-template>
+                                [https://github.com/PaulLeCam/react-leaflet/blob/master/src/Map.js](https://github.com/PaulLeCam/react-leaflet/blob/master/src/Map.js)
+                                ```jsx
+                                    render() {
+                                        // ... mostly just create a div for the map
+                                    }
+
+                                    createLeafletElement(props) {
+                                        // ... actually create the Leaflet map
+                                    }
+
+                                    updateLeafletElement(oldProps, newProps) {
+                                        // ... adjust the map by calling Leaflet methods
+                                    }
+
+                                    componentDidUpdate(oldProps) {
+                                        this.updateLeafletElement(oldProps, this.props);
+                                    }
+                                ```
+                            </textarea>
+                        </section>
+                        <section data-markdown>
+                            <textarea data-template>
+                                [https://github.com/PaulLeCam/react-leaflet/blob/master/src/MapControl.js](https://github.com/PaulLeCam/react-leaflet/blob/master/src/MapControl.js)
+                                ```jsx
+                                    componentDidMount() {
+                                        this.leafletElement.addTo(this.props.leaflet.map)
+                                    }
+
+                                    componentDidUpdate(prevProps) {
+                                        this.updateLeafletElement(prevProps, this.props)
+                                    }
+
+                                    componentWillUnmount() {
+                                        this.leafletElement.remove()
+                                    }
+
+                                    render() {
+                                        return null;
+                                    }
+                                ```
+                            </textarea>
+                        </section>
+                        <section data-markdown>
+                            <textarea data-template>
+                                [https://github.com/LiveBy/react-leaflet-control/blob/master/lib/control.jsx](https://github.com/LiveBy/react-leaflet-control/blob/master/lib/control.jsx)
+                                ```jsx
+                                    componentDidUpdate() {
+                                        this.renderContent();
+                                    }
+
+                                    renderContent() {
+                                        render( // this is React-DOM `render`!
+                                            Children.only(this.props.children),
+                                            this.leafletElement.getContainer()
+                                        );
+                                    }
+
+                                    render() {
+                                        return null;
+                                    }
+                                ```
+                            </textarea>
+                        </section>
+                        <section>
+                            <img
+                                src="images/reactLegendControl.png"
+                                alt="React legend control"
+                                style="background:none;border:none;box-shadow:none;height:500px"
+                            />
+                            <span style="width:100px"></span>
+                            <img
+                                src="images/reactLegendTree.png"
+                                alt="React legend component tree"
+                                style="background:none;border:none;box-shadow:none;height:500px"
+                            />
+                        </section>
+                    </section>
+                    <section>
+                        <section>
+                            <p>
+                                If you end up doing lots of stuff for which React-Leaflet doesn't
+                                provide a ready interface, at a certain point its abstactions may
+                                not be very beneficial
+                            </p>
+                        </section>
+                        <section>
+                            <p>
+                                It's fairly straightforward to write your own wrapper
+                            </p>
+                            <a
+                                href="https://github.com/kellyi/react-leaflet-sandbox/blob/master/app/src/components/LeafletMap.jsx"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://github.com/kellyi/react-leaflet-sandbox/blob/master/app/src/components/LeafletMap.jsx
+                            </a>
+                        </section>
+                        <section data-markdown>
+                            <textarea data-template>
+                            ```jsx
+                                render() {
+                                    const layerLegend = this.leafletMap &&
+                                        this.props.bikeNetworkVisible ? (
+                                        <LeafletLegend
+                                            mapComponent={this.leafletMap}
+                                            label="Bike lanes"
+                                        />) : null;
+
+                                    return (
+                                        <Fragment>
+                                            <div id="react-leaflet-map" />
+                                            {layerLegend}
+                                        </Fragment>
+                                    );
+                                }
+                            ```
+                            </textarea>
+                        </section>
+                        <section data-markdown>
+                            <textarea data-template>
+                            ```jsx
+                                componentDidMount() {
+                                    this.leafletMap = L.map('react-leaflet-map', {
+                                        center: this.props.center,
+                                        zoom: this.props.zoom,
+                                    });
+
+                                    // ... set up ArcGIS layers
+                                    // ... add geocoders & other plugins
+                                    // ... whatever else
+                                }
+                            ```
+                            </textarea>
+                        </section>
+                        <section data-markdown>
+                            <textarea data-template>
+                            ```jsx
+                                    componentWillReceiveProps(newProps) {
+                                        // ... call Leaflet methods
+                                    }
+                            ```
+
+                            or
+
+                            ```jsx
+                                    componentDidUpdate(oldProps) {
+                                        // ... call Leaflet methods
+                                    }
+                            ```
+                            </textarea>
+                        </section>
+                    </section>
+                    <section>
+                        <section>
+                            You can also make your own Leaflet controls & other elements which will re-render on prop changes...
+                        </section>
+                        <section data-markdown>
+                            <textarea data-template>
+                            ...like a map legend React Component that extends Leaflet's `Control` class
+                            ```js
+                                class LayerLegend extends L.Control {
+                                    onAdd() {
+                                        this.container = L.DomUtil.create('div');
+
+                                        return Object.assign(this.container, {
+                                            id: layerLegendElementID,
+                                            className: 'layer-legend',
+                                        });
+                                    }
+                                }
+                            ```
+                            </textarea>
+                        </section>
+                        <section data-markdown>
+                            <textarea data-template>
+                            ```jsx
+                            export default class LeafletLegend extends Component {
+                                constructor(props) {
+                                    super(props);
+                                    this.renderContent = this.renderContent.bind(this);
+                                }
+
+                                componentWillMount() {
+                                    this.layerLegend = new LayerLegend({
+                                        position: 'bottomleft',
+                                    });
+
+                                    this.layerLegend.addTo(this.props.mapComponent);
+                                }
+
+                                ...
+                            ```
+                            </textarea>
+                        </section>
+                        <section data-markdown>
+                            <textarea data-template>
+                            ```jsx
+                                renderContent() {
+                                    return render( // this is React-DOM's `render`!
+                                        <Fragment>
+                                            <div className="legend-swatch" />
+                                            <div className="legend-label">
+                                                {this.props.label}
+                                            </div>
+                                        </Fragment>,
+                                        document.getElementById(layerLegendElementID)
+                                    );
+                                }
+
+                                render() {
+                                    return null;
+                                }
+                            ```
+                            </textarea>
+                        </section>
+                        <section>
+                            <img
+                                src="images/plainLeafletMap.png"
+                                alt="plain Leaflet map"
+                                style="background:none;border:none;box-shadow:none"
+                            />
+                        </section>
+                    </section>
+                    <section>
+                        <p>
+                            Thank you!
+                        </p>
+                    </section>
+                    <section>
+                        <p>
+                            Additional React / Leaflet / mapping resources
+                        </p>
+                        <ul>
+                            <li>
+                                <a
+                                    href="https://github.com/kellyi/react-leaflet-sandbox"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    https://github.com/kellyi/react-leaflet-sandbox
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://github.com/azavea/react-native-rwd"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    https://github.com/azavea/react-native-rwd
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.azavea.com/blog/author/kinnes/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    https://www.azavea.com/blog/author/kinnes/
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://geospatial-react.surge.sh"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    https://geospatial-react.surge.sh
+                                </a>
+                            </li> 
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+        <script>
+            // More info about config & dependencies:
+            // - https://github.com/hakimel/reveal.js#configuration
+            // - https://github.com/hakimel/reveal.js#dependencies
+            Reveal.initialize({
+                slideNumber: true,
+                history: true,
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() {
+                        hljs.initHighlightingOnLoad(); }
+                    },
+                ],
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,5 @@
+deploy:
+  skip_cleanup: true
+  provider: surge
+  project: app/
+  domain: https://geospatial-react.surge.sh
