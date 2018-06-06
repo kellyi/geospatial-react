@@ -1,8 +1,8 @@
 ## 1. Geospatial React
 
 This talk is about "geospatial React", which is a fancy way of saying "how to
-make maps with React and Leaflet". I'm Kelly Innes and I work for Azavea in
-Callowhill
+make maps with React and Leaflet". I'm Kelly Innes and I'm a software developer
+at Azavea
 
 ## 2. Sandbox app
 
@@ -303,6 +303,9 @@ custom controls.
 - `renderContent` calls React-DOM's `render` method to attach the React component
 sent to the control to a div on the DOM
 
+Note: in some cases you may even want to use `react-dom/server` methods, like
+`renderToString` or `renderStaticMarkup`!
+
 ## 10.5 react-leaflet-control 2
 
 When you use react-leaflet-control, you end up creating a React component that
@@ -377,9 +380,25 @@ Here's what this looks like, in the bottom left corner. This looks and behaves
 essentially the same as the React-Leaflet version: clicking the buttons in the
 top cause Redux state changes, which then turn into UI and map updates.
 
-## 13.1 Thank you!
+## 13.1 To Sum Up
 
-## 14.1 Additional React / Leaflet / mapping resources
+So sum everything up I wanted to highlight three takeaways.
+
+## 13.2 React + Leaflet State
+
+React and Leaflet handle state and DOM updates differently. Even react-leaflet's abstraction doesn't fully abstract away the difference.
+
+## 13.3 Using React + Leaflet
+
+Using React for UIs and Leaflet for maps involves managing these differences in ways that can get slightly complicated.
+
+## 13.4 Refs + Lifecycle Methods
+
+Specifically: you end up having to use refs and sometimes twist React Component Lifecycle methods.
+
+## 14.1 Thank you!
+
+## 15.1 Additional React / Leaflet / mapping resources
 
 Wanted to close this with some additional React / Leaflet / Mapping resources
 
