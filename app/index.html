@@ -802,6 +802,7 @@
                                 class LayerLegend extends L.Control {
                                     onAdd() {
                                         this.container = L.DomUtil.create('div');
+                                        L.DomEvent.disableClickPropagation(this.container);
 
                                         return Object.assign(this.container, {
                                             id: layerLegendElementID,
@@ -836,8 +837,8 @@
                         <section data-markdown>
                             <textarea data-template>
                             ```jsx
-                                renderContent() {
-                                    return render( // this is React-DOM's `render`!
+                                render() {
+                                    return createPortal( // this is from React-DOM
                                         <Fragment>
                                             <div className="legend-swatch" />
                                             <div className="legend-label">
@@ -846,10 +847,6 @@
                                         </Fragment>,
                                         document.getElementById(layerLegendElementID)
                                     );
-                                }
-
-                                render() {
-                                    return null;
                                 }
                             ```
                             </textarea>
